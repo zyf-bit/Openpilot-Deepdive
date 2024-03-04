@@ -7,7 +7,6 @@ Openpilot-Deepdive的详细部署教程
 
 由于原项目没有预训练模型，因此使用4张NVIDIA GeForce RTX 3090进行训练，详细参数如下，cuda版本12.2![image](https://github.com/Haibara567/Openpilot-Deepdive/assets/94728547/3efc35ff-9c89-4f4a-a4dc-97eeff02ca7c)
 
-# CUDA 12.1
 conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
 
 使用上个命令仍然提示没有torchvision，再运行 pip install torchvision==0.17.0成功
