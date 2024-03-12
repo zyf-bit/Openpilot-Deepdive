@@ -13,6 +13,26 @@ conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=
 
 由于原项目仅使用comma2k19数据集进行训练，因此我们也一样
 
-batch_size设置为4，num_workers设置为2
+```[bash]
+# Training on a bare-metal machine with multiple GPUs
+# You need to open multiple terminals
+
+# Let's use 4 GPUs for example
+# Terminal 1
+PORT=23333 SLURM_PROCID=0 SLURM_NTASKS=4 python main.py
+# Terminal 2
+PORT=23333 SLURM_PROCID=1 SLURM_NTASKS=4 python main.py
+# Terminal 3
+PORT=23333 SLURM_PROCID=2 SLURM_NTASKS=4 python main.py
+# Terminal 4
+PORT=23333 SLURM_PROCID=3 SLURM_NTASKS=4 python main.py
+# Then, the training process will start after all 4 processes are launched.
+```
+
+在main.py中将batch_size设置为4，num_workers设置为2
 
 使用VScode中的ssh extension，然后打开命令行来看tensorboard
+
+```[bash]
+tensorboard --logdir runs
+```
