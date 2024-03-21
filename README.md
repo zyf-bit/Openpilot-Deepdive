@@ -31,6 +31,11 @@ PORT=23333 SLURM_PROCID=3 SLURM_NTASKS=4 python main.py
 
 在main.py中将batch_size设置为4，num_workers设置为2
 
+
+https://github.com/zyf-bit/Openpilot-Deepdive/assets/94728547/01b4b417-def8-4f1a-8765-0b5c45158a51
+
+
+
 使用VScode中的ssh extension，然后打开命令行来看tensorboard
 
 ```[bash]
